@@ -22,7 +22,8 @@
                                     <h3>
                                         Welcome!
                                     </h3>
-                                    <p>Master pages allow you to create a consistent look and behavior for all the pages (or group of pages) in your web application.
+                                    <p>i just change some code to see whether it gets committed.
+                                        Master pages allow you to create a consistent look and behavior for all the pages (or group of pages) in your web application.
 A master page provides a template for other pages, with shared layout and functionality. The master page defines placeholders for the content, which can be overridden by content pages.
 The output result is a combination of the master page and the content page.
 The content pages contain the content you want to display.
