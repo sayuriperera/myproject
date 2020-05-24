@@ -13,6 +13,7 @@ namespace library
         {
             try
             {
+
                 if (Session["hello"].Equals(""))
                 {
                     LinkButton2.Visible = true; //admin login
