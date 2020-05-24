@@ -41,7 +41,7 @@ namespace library
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("SELECT * from mEmp_Detail where Emp_ID='" + TextBox11.Text.Trim() + "';", con);
+                    SqlCommand cmd = new SqlCommand("SELECT * from Emp_Detail where Emp_ID='" + TextBox11.Text.Trim() + "';", con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -65,10 +65,10 @@ namespace library
             {
                 try
                 {
-                    //string filepath = "~/Employee_photos/social-media.png";
-                    //string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                    //FileUpload1.SaveAs(Server.MapPath("Employee_photos/" + filename));
-                    //filepath = "~/Employee_photos/" + filename;
+                    string filepath = "~/Employee_photos/social-media.png";
+                    string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                    FileUpload1.SaveAs(Server.MapPath("Employee_photos/" + filename));
+                    filepath = "~/Employee_photos/" + filename;
 
 
                     SqlConnection con = new SqlConnection(strcon);
@@ -78,7 +78,7 @@ namespace library
                         //Response.Write("<script> alert('hii');</script>");
                     }
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Emp_Detail(Emp_ID,First_Name,Last_Name,Full_Name,NIC,DOB,Gender,Address,City,District,Contact_No,Joined_Date,Status,Post,Department,Qualifications) values(@Emp_ID,@First_Name,@Last_Name,@Full_Name,@NIC,@DOB,@Gender,@Address,@City,@District,@Contact_No,@Joined_Date,@Status,@Post,@Department,@Qualifications)", con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Emp_Detail" + "(Emp_ID,First_Name,Last_Name,Full_Name,NIC,DOB,Gender,Address,City,District,Contact_No,Joined_Date,Status,Post,Department,Qualifications,Image) values(@Emp_ID,@First_Name,@Last_Name,@Full_Name,@NIC,@DOB,@Gender,@Address,@City,@District,@Contact_No,@Joined_Date,@Status,@Post,@Department,@Qualifications,@Image)", con);
                     cmd.Parameters.AddWithValue("@Emp_ID", TextBox11.Text.Trim());
                     cmd.Parameters.AddWithValue("@First_Name", TextBox1.Text.Trim());
                     cmd.Parameters.AddWithValue("@Last_Name", TextBox3.Text.Trim());
@@ -95,8 +95,8 @@ namespace library
                     cmd.Parameters.AddWithValue("@Post", TextBox10.Text.Trim());
                     cmd.Parameters.AddWithValue("@Department", DropDownList4.SelectedItem.Value);
                     cmd.Parameters.AddWithValue("@Qualifications", TextBox12.Text.Trim());
-                    //cmd.Parameters.AddWithValue("@Image", filepath);
-                    //_ = cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@Image", filepath);
+                    cmd.ExecuteNonQuery();
                     con.Close();
                     Response.Write("<script> alert('Member created successfully.');</script>");
                 }
