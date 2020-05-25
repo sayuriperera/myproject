@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ViewEmployee.aspx.cs" Inherits="library.ViewEmployee" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        #Image1{
+             position:absolute;
+             right:0px;
+             margin-right:40px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -23,18 +30,21 @@
                                  <div class="form-group">
                                      <div class="input-group">
                                 <asp:TextBox class="form-control" ID="TextBox16" runat="server"></asp:TextBox>
-                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Search" />
+                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Search" OnClick="Button3_Click" />
                                      </div>
                                      </div>
                             </div>
                         </div>
                         
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-7">
                                <label>Employee ID</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID" ReadOnly="True"></asp:TextBox>
                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <asp:Image ID="Image1" runat="server" CssClass="img-thumbnail"  />
                             </div>
                         </div>
 
@@ -72,7 +82,7 @@
                              <div class="col-md-6">
                                 <label>Contact Number</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="Contact Number" TextMode="Phone" ReadOnly="True"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="Contact Number"  ReadOnly="True"></asp:TextBox>
                                </div>
                             </div>
                         </div>
@@ -81,13 +91,13 @@
                             <div class="col-md-6">
                                   <label>Date of Birth</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="DOB" ReadOnly="True"></asp:TextBox>
                                </div> 
                             </div>
                             <div class="col-md-6">
                              <label>Gender</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox12" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>  
+                                   <asp:TextBox CssClass="form-control" ID="TextBox12" runat="server" placeholder="Gender" ReadOnly="True"></asp:TextBox>  
                                </div>
                                 </div>
                         </div>
@@ -111,22 +121,30 @@
                             <div class="col-md-6">
                              <label>District</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox13" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>                                    
+                                   <asp:TextBox CssClass="form-control" ID="TextBox13" runat="server" placeholder="District" ReadOnly="True"></asp:TextBox>                                    
                                </div>
                                 </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Qualifications</label>
+                                 <div class="form-group">
+                                   <asp:TextBox CssClass="form-control" ID="TextBox17" runat="server" placeholder="Qualifications" TextMode="MultiLine" ReadOnly="True"></asp:TextBox>
+                               </div>
+                            </div>
                         </div>
 
                               <div class="row">
                             <div class="col-md-6">
                                 <label>Joined Date</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" placeholder="Joined date" ReadOnly="True"></asp:TextBox>
                                </div>
                             </div>
                              <div class="col-md-6">
                                 <label>Status</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>                                  
+                                   <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" placeholder="Status" ReadOnly="True"></asp:TextBox>                                  
                                </div>
                             </div>
                         </div>
@@ -141,21 +159,21 @@
                                 <div class="col-md-6">
                                <label>Department</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox15" runat="server" TextMode="Date" ReadOnly="True"></asp:TextBox>                             
+                                   <asp:TextBox CssClass="form-control" ID="TextBox15" runat="server"  placeholder="Department" ReadOnly="True"></asp:TextBox>                             
                                </div>
                             </div>
 </div>
-                      
+                      <%--buttons--%>
 
                         <div class="row">
                             <div class="col-md-4 mx-auto">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block" ID="Button1" runat="server" Text="Back" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="Back" OnClick="Button1_Click" />
                                 </div>
                             </div>
                             <div class="col-md-4 mx-auto">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block" ID="Button2" runat="server" Text="Print" />
+                                    <asp:Button class="btn btn-success btn-block" ID="Button2" runat="server" Text="Print" OnClick="Button2_Click" />
                                 </div>
                             </div>
                         </div>

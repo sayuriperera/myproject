@@ -1708,6 +1708,7 @@
     <Content Include="images\laptop-computer-icons-laborer-employee-png-favpng-hXj1ewms7Mq5JEM6JMBzCbJpq.jpg" />
     <Content Include="images\social-media.png" />
     <Content Include="UserLogin.aspx" />
+    <Content Include="ViewAll.aspx" />
     <Content Include="ViewEmployee.aspx" />
     <Content Include="Web.config" />
     <Content Include="CreateUser.aspx" />
@@ -1772,6 +1773,13 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAll.aspx.cs">
+      <DependentUpon>ViewAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAll.aspx.designer.cs">
+      <DependentUpon>ViewAll.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewEmployee.aspx.cs">
       <DependentUpon>ViewEmployee.aspx</DependentUpon>

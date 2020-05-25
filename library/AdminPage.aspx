@@ -15,10 +15,10 @@
             <div class="col-md-4 mx-auto"
      <CENTER>
              <div>
-                 <button type="button" class="btn btn-dark btn-block" style="margin:5px">CREATE USER</button>
+                <a href="CreateUser.aspx"> <button type="button" class="btn btn-dark btn-block" style="margin:5px">CREATE USER</button></a>
             </div>
     <div>
-                 <button type="button" class="btn btn-dark btn-block" style="margin:5px">CREATE EMPLOYEE PROFILE</button>
+                 <a href="CreateProfile.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">CREATE EMPLOYEE PROFILE</button></a>
     </div>
          <div>
              <button type="button" class="btn btn-dark btn-block" style="margin:5px">CALCULATE SALARIES</button>
@@ -30,7 +30,7 @@
              <button type="button" class="btn btn-dark btn-block" style="margin:5px">EDIT EPLOYEE DATA</button>
          </div>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">VIEW EMPLOYEE DETAILS</button>
+             <a href="ViewEmployee.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">VIEW EMPLOYEE DETAILS</button></a>
          </div>
          <br />
 

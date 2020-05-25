@@ -18,6 +18,8 @@
     <script src="bootstrap/js/popper.min.js"></script>
     <%-- bootstrap js --%>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%-- datatables js --%>
+    <script src="data%20tables/js/jquery.dataTables.min.js"></script>
     <%-- CustomExpression css  --%>
     <link href="css/StyleSheet01.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">

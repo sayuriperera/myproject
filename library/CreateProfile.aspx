@@ -234,11 +234,17 @@
                       
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button2" runat="server" Text="Back" OnClick="Button1_Click" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Button class="btn btn-success btn-block" ID="Button1" runat="server" Text="Create" OnClick="Button1_Click" />
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

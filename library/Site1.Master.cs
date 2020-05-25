@@ -13,8 +13,9 @@ namespace library
         {
             try
             {
-
-                if (Session["hello"].Equals(""))
+                string sessionhello = Session["hello"] as string;
+                if (string.IsNullOrEmpty(sessionhello))
+                //if (Session["hello"].Equals(null))
                 {
                     LinkButton2.Visible = true; //admin login
                     LinkButton1.Visible = true; //user login
@@ -45,16 +46,16 @@ namespace library
         {
             Response.Redirect("UserLogin.aspx");
         }
-
+        //logout
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
-            Session["hello"] = "";
-            Session["name"] = "";
+            Session["hello"] = " ";
+            Session["name"] = " ";
             LinkButton2.Visible = true; //admin login
             LinkButton1.Visible = true; //user login
             LinkButton4.Visible = true; //hello
             LinkButton3.Visible = false; //logout
-
+            Response.Redirect("HomePage.aspx");
         }
     }
 }
