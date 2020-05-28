@@ -68,9 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\css\bootstrap1.min.css" />
+    <Content Include="bootstrap\css\bootstrap2.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="bootstrap\js\bootstrap1.min.js" />
+    <Content Include="bootstrap\js\bootstrap2.min.js" />
     <Content Include="bootstrap\js\jquery-3.4.1.slim.min.js" />
+    <Content Include="bootstrap\js\jquery1-3.4.1.slim.min.js" />
+    <Content Include="bootstrap\js\jquery2-3.4.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
+    <Content Include="bootstrap\js\popper1.min.js" />
+    <Content Include="bootstrap\js\popper2.min.js" />
     <Content Include="CreateProfile.aspx" />
     <Content Include="css\StyleSheet01.css" />
     <Content Include="data tables\css\jquery.dataTables.min.css" />
@@ -1707,6 +1715,7 @@
     <Content Include="images\download.jpg" />
     <Content Include="images\laptop-computer-icons-laborer-employee-png-favpng-hXj1ewms7Mq5JEM6JMBzCbJpq.jpg" />
     <Content Include="images\social-media.png" />
+    <Content Include="test.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="ViewAll.aspx" />
     <Content Include="ViewEmployee.aspx" />
@@ -1738,6 +1747,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>

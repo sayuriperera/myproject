@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="library.UserLogin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="test.aspx.cs" Inherits="library.test" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
@@ -11,7 +10,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                      <img width="150px" src="images/social-media.png" />
+                                      <img width="150px" src="images/admin.png" />
                                 </center>  
                             </div>
                         </div>
@@ -43,5 +42,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

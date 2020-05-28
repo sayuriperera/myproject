@@ -1,8 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EditEmployee.aspx.cs" Inherits="library.EditEmployee" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#Image1').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <style>
+        #Image1{
+             position:absolute;
+             right:0px;
+             margin-right:40px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <br />
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -22,20 +41,32 @@
                                  <div class="form-group">
                                      <div class="input-group">
                                 <asp:TextBox class="form-control" ID="TextBox16" runat="server"></asp:TextBox>
-                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Search" />
+                                    <asp:Button class="btn btn-primary" ID="Button3" runat="server" Text="Search" OnClick="Button3_Click" />
                                      </div>
                                      </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-md-7">
                                <label>Employee ID</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID"></asp:TextBox>
                                </div>
                             </div>
+                            
+                            <div class="col-md-5">
+                                <asp:Image ID="Image1" runat="server" CssClass="img-thumbnail"  />
+                            </div>
                         </div>
+                    <div class="row">
+                            <div class="col">
+                               <label>Employee Image</label>
+                                 <div class="form-group">
+                                     <asp:FileUpload class="form-control" ID="FileUpload1" onchange="readURL(this);" runat="server" />
+                               </div>
+                            </div>
+                    </div>
 
                         <div class="row">
                             <div class="col-md-6">
@@ -80,7 +111,7 @@
                             <div class="col-md-6">
                                   <label>Date of Birth</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server"></asp:TextBox>
                                </div> 
                             </div>
                             <div class="col-md-6">
@@ -149,12 +180,20 @@
                                </div>
                                 </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <label>Qualifications</label>
+                                 <div class="form-group">
+                                   <asp:TextBox CssClass="form-control" ID="TextBox17" runat="server" placeholder="Qualifications" TextMode="MultiLine" ReadOnly="True"></asp:TextBox>
+                               </div>
+                            </div>
+                        </div>
 
                               <div class="row">
                             <div class="col-md-6">
                                 <label>Joined Date</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" TextMode="Date"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" ></asp:TextBox>
                                </div>
                             </div>
                              <div class="col-md-6">
@@ -199,17 +238,17 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-warning btn-block" ID="Button1" runat="server" Text="Update" />
+                                    <asp:Button class="btn btn-warning btn-block" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-danger btn-block" ID="Button2" runat="server" Text="Delete" />
+                                    <asp:Button class="btn btn-danger btn-block" ID="Button2" runat="server" Text="Delete" OnClick="Button2_Click" />
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block" ID="Button4" runat="server" Text="Cancel" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button4" runat="server" Text="Cancel" OnClick="Button4_Click" />
                                 </div>
                             </div>
                         </div>
@@ -217,5 +256,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

@@ -6,18 +6,24 @@
 <head runat="server">
     <title></title>
     <%-- bootsrap css --%>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap2.min.css" rel="stylesheet" />
+
+
     <%-- datatable css --%>
     <link href="data%20tables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <%-- fontawesome css --%>
     <link href="fontawesome/css/all.css" rel="stylesheet" />
 
     <%-- jquery --%>
-    <script src="bootstrap/js/jquery-3.4.1.slim.min.js"></script>
-    <%-- popper js --%>
-    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/jquery2-3.4.1.slim.min.js"></script>
+
+    <%-- popper js --%>  
+    <script src="bootstrap/js/popper2.min.js"></script>
+
     <%-- bootstrap js --%>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap2.min.js"></script>
+
+
     <%-- datatables js --%>
     <script src="data%20tables/js/jquery.dataTables.min.js"></script>
     <%-- CustomExpression css  --%>
@@ -96,10 +102,9 @@
                              <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Member Management</asp:LinkButton>
                         </p>
  
-                    </div> --%>
+                    </div>--%>
  
-                </div>
-            </div>
+         
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
