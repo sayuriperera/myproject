@@ -52,6 +52,7 @@
                                <label>Employee ID</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Employee ID Required." ControlToValidate="TextBox11" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>    
                             </div>
                         </div>
@@ -70,12 +71,14 @@
                                   <label>First Name</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="First Name"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="First Name Required" ControlToValidate="TextBox1" Font-Size="X-Small" Font-Bold="True" ForeColor="Red" ></asp:RequiredFieldValidator>
                                </div> 
                             </div>
                             <div class="col-md-6">
                              <label>Last Name</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Last Name"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Last Name Required" ControlToValidate="TextBox3" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>
                                 </div>
                         </div>
@@ -85,6 +88,7 @@
                                <label>Full Name</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Full Name"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="FullName Required" ControlToValidate="TextBox4" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>
                             </div>
                         </div>
@@ -94,12 +98,15 @@
                                 <label>NIC Number</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="NIC Number"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="NIC Number Required" ControlToValidate="TextBox2" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                     <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator" ClientValidationFunction="CustomValidator1_ServerValidate" ControlToValidate="TextBox2"></asp:CustomValidator>
                                </div>
                             </div>
                              <div class="col-md-6">
                                 <label>Contact Number</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="Contact Number" TextMode="Phone"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Contact Number Required" ControlToValidate="TextBox8" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>
                             </div>
                         </div>
@@ -109,6 +116,8 @@
                                   <label>Date of Birth</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="TextBox5" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Cannot be a Future Date" ControlToValidate="TextBox5" Operator="LessThanEqual" Type="Date" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:CompareValidator>
                                </div> 
                             </div>
                             <div class="col-md-6">
@@ -120,7 +129,7 @@
                                         <asp:ListItem Text="Male" Value="Male" />
 
                                     </asp:DropDownList>
-                                    
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Select a Gender" ControlToValidate="DropDownList1" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>
                                 </div>
                         </div>
@@ -130,6 +139,7 @@
                                 <label>Address</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Address" TextMode="MultiLine"></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Address Required" ControlToValidate="TextBox6" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div>
                             </div>
                         </div>
@@ -139,6 +149,7 @@
                                   <label>City</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox7" placeholder="City" runat="server" TextMode="SingleLine"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ErrorMessage="City is Required" ControlToValidate="TextBox7" Font-Bold="True" Font-Size="X-Small" ForeColor="Red"></asp:RequiredFieldValidator>
                                </div> 
                             </div>
                             <div class="col-md-6">
@@ -192,6 +203,8 @@
                                 <label>Joined Date</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" TextMode="Date"></asp:TextBox>
+                                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Cannot be a future date" Operator="LessThanEqual" Type="Date"  ControlToValidate="TextBox9" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ></asp:CompareValidator>
+                                  
                                </div>
                             </div>
                              <div class="col-md-6">
@@ -236,7 +249,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block" ID="Button2" runat="server" Text="Back" OnClick="Button1_Click" />
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button2" runat="server" Text="Back" OnClick="Button2_Click" />
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -251,6 +264,4 @@
             </div>
         </div>
    </div>
-    <br />
-
 </asp:Content>

@@ -28,7 +28,7 @@ namespace library
                     LinkButton1.Visible = false; //user login
                     LinkButton3.Visible = true; //logout
                     LinkButton4.Visible = true; //hello
-                    LinkButton4.Text = "Hello" + Session["name"].ToString(); 
+                    LinkButton4.Text = "Hello " + Session["name"].ToString(); 
                 }
             }
             catch(Exception ex)

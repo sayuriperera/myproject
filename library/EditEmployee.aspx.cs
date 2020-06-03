@@ -26,6 +26,10 @@ namespace library
             {
                 getEmployeeDetails();
             }
+            else
+            {
+                Response.Write("<script>alert('Invalid name or Employee ID');</script>");
+            }
         }
         //update button 
         protected void Button1_Click(object sender, EventArgs e)
@@ -172,6 +176,7 @@ namespace library
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Employee Details Updated Successfully');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
@@ -193,6 +198,7 @@ namespace library
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Employee deleted Successfully');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
@@ -201,7 +207,28 @@ namespace library
             }
         }
 
-        
+        void clearForm()
+        {
+            TextBox16.Text = "";
+            TextBox11.Text = "";
+            TextBox1.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox2.Text = "";
+            TextBox5.Text = "";
+            DropDownList1.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            DropDownList2.Text = "";
+            TextBox8.Text = "";
+            TextBox9.Text = "";
+            DropDownList3.Text = "";
+            TextBox10.Text = "";
+            DropDownList4.Text = "";
+            TextBox17.Text = "";
+            Image1.ImageUrl = "";
+            global_filepath = "";
+        }
     }
 
 

@@ -15,7 +15,8 @@ namespace library
         private readonly string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CompareValidator1.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            CompareValidator2.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -109,11 +110,46 @@ namespace library
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script> alert('Member created successfully.');</script>");
+                clearForm();
             }
             catch (Exception ex)
             {
                 Response.Write("<script> alert('" + ex.Message + "');</script>");
             }
+        }
+
+        void clearForm()
+        {
+            TextBox11.Text = "";
+            TextBox1.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox2.Text = "";
+            TextBox5.Text = "";
+            DropDownList1.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            DropDownList2.Text = "";
+            TextBox8.Text = "";
+            TextBox9.Text = "";
+            DropDownList3.Text = "";
+            TextBox10.Text = "";
+            DropDownList4.Text = "";
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            var check = false;
+            DateTime yourYear = Convert.ToDateTime(TextBox5);
+            int compareYear = yourYear.Year % 100;
+            string LastYear = Convert.ToString(yourYear);
+            string DigitNIC = TextBox2.Text;
+            string FisrtDigit = DigitNIC.Substring(0, 2);
+            if (FisrtDigit == DigitNIC)
+            {
+                check = true;
+            }
+            args.IsValid = check;
         }
     }
     }
