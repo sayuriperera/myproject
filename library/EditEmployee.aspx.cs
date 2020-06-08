@@ -17,7 +17,8 @@ namespace library
         static string global_filepath;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CompareValidator1.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            CompareValidator2.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
         }
         //Search button
         protected void Button3_Click(object sender, EventArgs e)
@@ -101,13 +102,13 @@ namespace library
                         TextBox3.Text = dr.GetValue(2).ToString();
                         TextBox4.Text = dr.GetValue(3).ToString();
                         TextBox2.Text = dr.GetValue(4).ToString();
-                        TextBox5.Text = dr.GetValue(5).ToString();
+                        TextBox5.Text = Convert.ToDateTime (dr.GetValue(5)).ToString("dd/MM/yyyy");
                         DropDownList1.Text = dr.GetValue(6).ToString();
                         TextBox6.Text = dr.GetValue(7).ToString();
                         TextBox7.Text = dr.GetValue(8).ToString();
                         DropDownList2.Text = dr.GetValue(9).ToString();
                         TextBox8.Text = dr.GetValue(10).ToString();
-                        TextBox9.Text = dr.GetValue(11).ToString();
+                        TextBox9.Text = Convert.ToDateTime (dr.GetValue(11)).ToString("dd/MM/yyyy");
                         DropDownList3.Text = dr.GetValue(12).ToString();
                         TextBox10.Text = dr.GetValue(13).ToString();
                         DropDownList4.Text = dr.GetValue(14).ToString();

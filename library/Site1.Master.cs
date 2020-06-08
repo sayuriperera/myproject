@@ -57,5 +57,10 @@ namespace library
             LinkButton3.Visible = false; //logout
             Response.Redirect("HomePage.aspx");
         }
+        //user page
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("UserProfile.aspx");
+        }
     }
 }

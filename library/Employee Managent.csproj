@@ -79,6 +79,7 @@
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="bootstrap\js\popper1.min.js" />
     <Content Include="bootstrap\js\popper2.min.js" />
+    <Content Include="ControlPanal.aspx" />
     <Content Include="CreateProfile.aspx" />
     <Content Include="css\StyleSheet01.css" />
     <Content Include="data tables\css\jquery.dataTables.min.css" />
@@ -1715,8 +1716,10 @@
     <Content Include="images\download.jpg" />
     <Content Include="images\laptop-computer-icons-laborer-employee-png-favpng-hXj1ewms7Mq5JEM6JMBzCbJpq.jpg" />
     <Content Include="images\social-media.png" />
+    <Content Include="RateEmployees.aspx" />
     <Content Include="SupervisorPage.aspx" />
-    <Content Include="test.aspx" />
+    <Content Include="UserProfile.aspx" />
+    <Content Include="TestStar.aspx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="ViewAll.aspx" />
     <Content Include="ViewEmployee.aspx" />
@@ -1727,6 +1730,13 @@
     <Content Include="HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlPanal.aspx.cs">
+      <DependentUpon>ControlPanal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanal.aspx.designer.cs">
+      <DependentUpon>ControlPanal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateProfile.aspx.cs">
       <DependentUpon>CreateProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1742,6 +1752,13 @@
       <DependentUpon>EditEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateEmployees.aspx.cs">
+      <DependentUpon>RateEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RateEmployees.aspx.designer.cs">
+      <DependentUpon>RateEmployees.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1756,12 +1773,19 @@
     <Compile Include="SupervisorPage.aspx.designer.cs">
       <DependentUpon>SupervisorPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="test.aspx.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="test.aspx.designer.cs">
-      <DependentUpon>test.aspx</DependentUpon>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestStar.aspx.cs">
+      <DependentUpon>TestStar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestStar.aspx.designer.cs">
+      <DependentUpon>TestStar.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserLogin.aspx.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>

@@ -27,7 +27,7 @@
              <button type="button" class="btn btn-dark btn-block" style="margin:5px">GENERATE REPORTS</button>
          </div>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">EDIT EPLOYEE DATA</button>
+           <a href="EditEmployee.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">EDIT EPLOYEE DATA</button></a>
          </div>
          <div>
              <a href="ViewEmployee.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">VIEW EMPLOYEE DETAILS</button></a>

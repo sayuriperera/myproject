@@ -35,7 +35,38 @@ namespace library
         //back button
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminPage.aspx");
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * from Login where UserName='" + Session["name"].ToString() + "';", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        if (dr.GetValue(3).ToString() == "Assistant")
+                        {
+                            Response.Redirect("CreateProfile.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("AdminPage.aspx");
+                        }
+                       
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
 
 
@@ -139,17 +170,29 @@ namespace library
 
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            var check = false;
-            DateTime yourYear = Convert.ToDateTime(TextBox5);
-            int compareYear = yourYear.Year % 100;
-            string LastYear = Convert.ToString(yourYear);
-            string DigitNIC = TextBox2.Text;
-            string FisrtDigit = DigitNIC.Substring(0, 2);
-            if (FisrtDigit == DigitNIC)
+
+           // try
+            //{
+                if (Convert.ToString(args.Value).Substring(args.Value.Length-2,2) == Convert.ToString(Convert.ToDateTime(TextBox5).Year % 100))
             {
-                check = true;
+                Response.Write("it matches");
             }
-            args.IsValid = check;
+            else
+            {
+                Response.Write("sorry");
+            }
+
+               // DateTime yourYear = Convert.ToDateTime(TextBox5);
+               // int twodigityear = yourYear.Year % 100;
+               // int alldigitnic = int.Parse(args.Value);
+               // string finalnic = Convert.ToString(alldigitnic);
+                //string finaldob = Convert.ToString(twodigityear);
+               // args.IsValid = (finaldob == finalnic);
+            //}
+          //atch(Exception ex)
+            //{
+                //args.IsValid = false;
+           // }
         }
     }
     }
