@@ -131,7 +131,7 @@
                                         <asp:ListItem Text="Male" Value="Male" />
 
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Select a Gender" ControlToValidate="DropDownList1" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Select a gender" ControlToValidate="DropDownList1" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1" InitialValue="Select"></asp:RequiredFieldValidator>
                                </div>
                                 </div>
                         </div>
@@ -185,7 +185,7 @@
                                         <asp:ListItem Text="Trincomalee" Value="Trincomalee" />
                                         <asp:ListItem Text="Vvaniya" Value="Vavniya" />
                                     </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Select a district" ControlToValidate="DropDownList2" InitialValue="Select a district" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Select a district" ControlToValidate="DropDownList2" InitialValue="Select" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
                                </div>
                                 </div>
                         </div>
@@ -244,9 +244,7 @@
                                     </asp:DropDownList>
                                </div>
                             </div>
-</div>
-                      
-
+                    </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -265,4 +263,5 @@
             </div>
         </div>
    </div>
+    <br />
 </asp:Content>

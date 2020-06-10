@@ -51,9 +51,9 @@
                             <div class="col-md-7">
                                <label>Employee ID</label>
                                  <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID"></asp:TextBox>
-                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Employee ID Required." ControlToValidate="TextBox11" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="val2"></asp:RequiredFieldValidator>
-                               </div>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID" ReadOnly="True"></asp:TextBox>
+                                     <asp:Label ID="Label1" runat="server" Text="Employee ID cannot be edited." Font-Bold="True" Font-Size="X-Small" ForeColor="Blue"></asp:Label>
+                                 </div>
                             </div>
                             
                             <div class="col-md-5">
@@ -136,8 +136,8 @@
                                         <asp:ListItem Text="Select" Value="Select" />
                                         <asp:ListItem Text="Female" Value="Female" />
                                         <asp:ListItem Text="Male" Value="Male" />
-
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Select a gender" ControlToValidate="DropDownList1" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val2" InitialValue="Select"></asp:RequiredFieldValidator>
                                     
                                </div>
                                 </div>
@@ -195,6 +195,7 @@
                                         <asp:ListItem Text="Vvaniya" Value="Vavniya" />
 
                                     </asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="Select a district" ControlToValidate="DropDownList2" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val2" InitialValue="Select"></asp:RequiredFieldValidator>
                                     
                                </div>
                                 </div>

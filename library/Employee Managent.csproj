@@ -79,6 +79,7 @@
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="bootstrap\js\popper1.min.js" />
     <Content Include="bootstrap\js\popper2.min.js" />
+    <Content Include="CalculateSalary.aspx" />
     <Content Include="ControlPanal.aspx" />
     <Content Include="CreateProfile.aspx" />
     <Content Include="css\StyleSheet01.css" />
@@ -1714,6 +1715,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="images\admin.png" />
     <Content Include="images\download.jpg" />
+    <Content Include="images\icons8-payroll-80.png" />
     <Content Include="images\laptop-computer-icons-laborer-employee-png-favpng-hXj1ewms7Mq5JEM6JMBzCbJpq.jpg" />
     <Content Include="images\social-media.png" />
     <Content Include="RateEmployees.aspx" />
@@ -1730,6 +1732,13 @@
     <Content Include="HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculateSalary.aspx.cs">
+      <DependentUpon>CalculateSalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalculateSalary.aspx.designer.cs">
+      <DependentUpon>CalculateSalary.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ControlPanal.aspx.cs">
       <DependentUpon>ControlPanal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

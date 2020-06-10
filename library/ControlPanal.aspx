@@ -35,26 +35,47 @@
                           <div class="row">
                             <div class="col">                                
                                 <center>
-                                      <h3>CONTROL PANEL</h3>
+                                      <h3>SALARY CONTROL</h3>
                                 </center>  
                                 </div>
                             </div>
                                    <div class="row">
                                        <div class="col-md-6">
-                                           <asp:DropDownList ID="DropDownList1" runat="server">
+                                           <label>Employee Type</label>
+                                <div class="form-group">
+                                           <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
                                                <asp:ListItem Text="Select" Value="Select" />
                                                <asp:ListItem Text="Department Supervisor" Value="Department Supervisor" />
                                                <asp:ListItem Text="Sales staff" Value="Sales staff" />
                                                <asp:ListItem Text="Operations staff" Value="Operations staff" />
                                            </asp:DropDownList>
                                        </div>
+                                           </div>
+
                                        <div class="col-md-6">
-                                           <asp:TextBox ID="TextBox2" runat="server" TextMode="Number"></asp:TextBox>
+                                           <label>Hourly Rate</label>
+                                <div class="form-group">
+                                           <asp:TextBox  CssClass="form-control" ID="TextBox2" runat="server" placeholder="Rate"></asp:TextBox>
                                        </div>
                                    </div>
+                                          </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                 <div class="form-group">
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="Back" OnClick="Button1_Click"/>
+                                </div>
+                            </div>
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                    <asp:Button class="btn btn-success btn-block" ID="Button2" runat="server" Text="Update" />
+                                </div>
+                            </div>
+
                         </div>
+                     
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 </asp:Content>

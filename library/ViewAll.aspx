@@ -2,9 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript">
-      $(document).ready(function () {
-          $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-      });
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+        })
+
    </script>
     <style type="text/css">
         .auto-style1 {
@@ -14,6 +15,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
     <div class="container-fluid">
         <div class="row">
             <div class="col">
@@ -43,7 +45,6 @@
                                         <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" />
                                         <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
                                         <asp:BoundField DataField="Qualifications" HeaderText="Qualifications" SortExpression="Qualifications" />
-                                       
                                         <asp:TemplateField HeaderText="Other Information">
 
                                             <ItemTemplate>
@@ -83,6 +84,14 @@
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+
+                                 <div class="form-group">
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="Back" OnClick="Button1_Click"/>
+                                </div>
                             </div>
                         </div>
                         </div>

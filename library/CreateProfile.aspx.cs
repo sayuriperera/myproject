@@ -171,16 +171,7 @@ namespace library
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
 
-           // try
-            //{
-                if (Convert.ToString(args.Value).Substring(args.Value.Length-2,2) == Convert.ToString(Convert.ToDateTime(TextBox5).Year % 100))
-            {
-                Response.Write("it matches");
-            }
-            else
-            {
-                Response.Write("sorry");
-            }
+          
 
                // DateTime yourYear = Convert.ToDateTime(TextBox5);
                // int twodigityear = yourYear.Year % 100;

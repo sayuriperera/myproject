@@ -15,6 +15,12 @@ namespace library
         private readonly string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            GetData();
+        }
+
+        // get data defined function
+        void GetData()
+        {
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
@@ -42,24 +48,59 @@ namespace library
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
         }
+
+        //clear the textboxes after updating 
+        void ClearText()
+        {
+            TextBox3.Text = " ";
+            TextBox4.Text = " ";
+        }
         //back button
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomePage.aspx");
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * from Login where UserName='" + Session["name"].ToString() + "';", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        if (dr.GetValue(3).ToString() == "Assistant")
+                        {
+                            Response.Redirect("CreateProfile.aspx");
+                        }
+                        else if(dr.GetValue(3).ToString() == "Supervisor")
+                        {
+                            Response.Redirect("SupervisorPage.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("AdminPage.aspx");
+                        }
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
+
         //update button
         protected void Button2_Click(object sender, EventArgs e)
         {
-            string username,password;
-            if(TextBox3.Text.Trim() == "")
-            {
-                username = TextBox2.Text.Trim();
-            }
-            else
-            {
-                username = TextBox3.Text.Trim();
-            }
-            if (TextBox4.Text.Trim() == "")
+            string password;
+            if (TextBox3.Text.Trim() == "")
             {
                 password = TextBox5.Text.Trim();
             }
@@ -75,13 +116,17 @@ namespace library
                     con.Open();
                 }
 
-                SqlCommand cmd = new SqlCommand("UPDATE Login set UserName = @UserName, Password = @Password where UserName='" + Session["name"].ToString().Trim()+ "'", con);
-                cmd.Parameters.AddWithValue("@UserName", username);
+                SqlCommand cmd = new SqlCommand("UPDATE Login set Password = @Password where UserName='" + Session["name"].ToString().Trim()+ "'", con);
                 cmd.Parameters.AddWithValue("@Password", password);
-                cmd.ExecuteNonQuery();
+                int result = cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script> alert('Username and password updated successfully.');</script>");
-                Response.Redirect("HomePage.aspx");
+                if (result > 0)
+                {
+                    Response.Write("<script> alert('Password updated successfully.');</script>");
+                    GetData();
+                    ClearText();
+                }
+
             }
             catch (Exception ex)
             {

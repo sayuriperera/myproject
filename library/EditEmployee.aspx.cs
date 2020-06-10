@@ -19,6 +19,7 @@ namespace library
         {
             CompareValidator1.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
             CompareValidator2.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            
         }
         //Search button
         protected void Button3_Click(object sender, EventArgs e)
@@ -154,7 +155,7 @@ namespace library
 
                 SqlCommand cmd = new SqlCommand("UPDATE Emp_Detail SET Emp_ID=@Emp_ID ,First_Name=@First_Name, Last_Name=@Last_Name,Full_Name=@Full_Name, NIC=@NIC, DOB=@DOB, Gender=@Gender,Address=@Address,City=@City,District=@District,Contact_No=@Contact_No,Joined_Date=@Joined_Date,Status=@Status,Post=@Post,Department=@Department,Qualifications=@Qualifications,Image=@Image where Emp_ID='" + TextBox16.Text.Trim() + "' OR First_Name='" + TextBox16.Text.Trim() + "';", con);
 
-                cmd.Parameters.AddWithValue("@Emp_ID", TextBox11.Text.Trim());
+                //cmd.Parameters.AddWithValue("@Emp_ID", TextBox11.Text.Trim());
                 cmd.Parameters.AddWithValue("@First_Name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@Last_Name", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@Full_Name", TextBox4.Text.Trim());

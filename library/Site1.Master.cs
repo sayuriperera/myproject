@@ -55,6 +55,7 @@ namespace library
             LinkButton1.Visible = true; //user login
             LinkButton4.Visible = true; //hello
             LinkButton3.Visible = false; //logout
+            Response.Write("<script>alert('You logged out.');</script>");
             Response.Redirect("HomePage.aspx");
         }
         //user page

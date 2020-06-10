@@ -42,6 +42,12 @@ namespace library
             }
         }
 
+        //back button
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminPage.aspx");
+        }
+
         //defined functions
         bool checkEmpExists()
         {
@@ -142,5 +148,7 @@ namespace library
             TextBox8.Text = "";
             DropDownList1.Text = "";
         }
+
+      
     }
 }
