@@ -46,14 +46,14 @@
                             <div class="col-md-6">
                                    <label>New Password</label>
                                <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Password Username"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Password Username" TextMode="Password"></asp:TextBox>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ErrorMessage="Address Required" ControlToValidate="TextBox3" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val5"></asp:RequiredFieldValidator>
                                </div> 
                                     </div>
                                 <div class="col-md-6">
                                   <label>Confirm Password</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Re-enter Password"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Re-enter Password" TextMode="Password"></asp:TextBox>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Address Required" ControlToValidate="TextBox4" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val5"></asp:RequiredFieldValidator>
                                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Passwords dont match" ControlToCompare="TextBox3" ControlToValidate="TextBox4" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val5"></asp:CompareValidator>
                                </div> 

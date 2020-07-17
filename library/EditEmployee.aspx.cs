@@ -17,8 +17,7 @@ namespace library
         static string global_filepath;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CompareValidator1.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
-            CompareValidator2.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
+            
             
         }
         //Search button
@@ -155,18 +154,18 @@ namespace library
 
                 SqlCommand cmd = new SqlCommand("UPDATE Emp_Detail SET Emp_ID=@Emp_ID ,First_Name=@First_Name, Last_Name=@Last_Name,Full_Name=@Full_Name, NIC=@NIC, DOB=@DOB, Gender=@Gender,Address=@Address,City=@City,District=@District,Contact_No=@Contact_No,Joined_Date=@Joined_Date,Status=@Status,Post=@Post,Department=@Department,Qualifications=@Qualifications,Image=@Image where Emp_ID='" + TextBox16.Text.Trim() + "' OR First_Name='" + TextBox16.Text.Trim() + "';", con);
 
-                //cmd.Parameters.AddWithValue("@Emp_ID", TextBox11.Text.Trim());
+                cmd.Parameters.AddWithValue("@Emp_ID", TextBox11.Text.Trim());
                 cmd.Parameters.AddWithValue("@First_Name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@Last_Name", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@Full_Name", TextBox4.Text.Trim());
                 cmd.Parameters.AddWithValue("@NIC", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@DOB", TextBox5.Text.Trim());
+                cmd.Parameters.AddWithValue("@DOB", Convert.ToDateTime( TextBox5.Text.Trim()));
                 cmd.Parameters.AddWithValue("@Gender", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@Address", TextBox6.Text.Trim());
                 cmd.Parameters.AddWithValue("@City", TextBox7.Text.Trim());
                 cmd.Parameters.AddWithValue("@District", DropDownList2.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@Contact_No", TextBox8.Text.Trim());
-                cmd.Parameters.AddWithValue("@Joined_Date", TextBox9.Text.Trim());
+                cmd.Parameters.AddWithValue("@Joined_Date", Convert.ToDateTime(TextBox9.Text.Trim()));
                 cmd.Parameters.AddWithValue("@Status", DropDownList3.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@Post", TextBox10.Text.Trim());
                 cmd.Parameters.AddWithValue("@Department", DropDownList4.SelectedItem.Value);

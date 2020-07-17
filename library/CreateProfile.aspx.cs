@@ -168,22 +168,6 @@ namespace library
             DropDownList4.Text = "";
         }
 
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-
-          
-
-               // DateTime yourYear = Convert.ToDateTime(TextBox5);
-               // int twodigityear = yourYear.Year % 100;
-               // int alldigitnic = int.Parse(args.Value);
-               // string finalnic = Convert.ToString(alldigitnic);
-                //string finaldob = Convert.ToString(twodigityear);
-               // args.IsValid = (finaldob == finalnic);
-            //}
-          //atch(Exception ex)
-            //{
-                //args.IsValid = false;
-           // }
-        }
+       
     }
     }

@@ -1713,8 +1713,10 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="images\12244266.jpg" />
     <Content Include="images\admin.png" />
     <Content Include="images\download.jpg" />
+    <Content Include="images\icons8-name-tag-100.png" />
     <Content Include="images\icons8-payroll-80.png" />
     <Content Include="images\laptop-computer-icons-laborer-employee-png-favpng-hXj1ewms7Mq5JEM6JMBzCbJpq.jpg" />
     <Content Include="images\social-media.png" />

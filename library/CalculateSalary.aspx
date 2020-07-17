@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -18,13 +19,14 @@
 
                         <div class="row">
                             <div class="col">
-                                <center>
                                  <div class="form-group">
+                                <center>
                                      <img src="images/icons8-payroll-80.png" width="100px" height="100px/>
+                                    </center>
                                  </div>
-                                </center>
                             </div>
                             </div>
+                        <br />
                          <div class="row">
                             <div class="col">
                                <label>Upload excel sheet</label>
@@ -35,7 +37,7 @@
                             </div>
                         <div class="row">
                             <div class="col-md-6">
-                                  <label>Date of Birth</label>
+                                  <label>Start Date</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Start Date Required. " ControlToValidate="TextBox5" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val6"></asp:RequiredFieldValidator>
@@ -45,7 +47,7 @@
                                </div> 
                             </div>
                             <div class="col-md-6">
-                             <label>Gender</label>
+                             <label>End date</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" TextMode="Date"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="End date Required. " ControlToValidate="TextBox5" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val6"></asp:RequiredFieldValidator>
@@ -73,4 +75,8 @@
                 </div>
         </div>
         </div>
+    <br />
+    <br />
+
+
 </asp:Content>

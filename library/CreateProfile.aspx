@@ -100,7 +100,6 @@
                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="NIC Number"></asp:TextBox>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="NIC Number Required" ControlToValidate="TextBox2" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Not a valid NIC number" ControlToValidate="TextBox2" ValidationExpression="[0-9a-zA-Z]{9,12}" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1" Font-Bold="True"></asp:RegularExpressionValidator>
-                                     <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator" ControlToValidate="TextBox2" ValidationGroup="Val1" OnServerValidate="CustomValidator1_ServerValidate"></asp:CustomValidator>
                                </div>
                             </div>
                              <div class="col-md-6">

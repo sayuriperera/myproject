@@ -52,7 +52,7 @@
                 <div class="card h-100">
                 <div class="card-body flex-fill">
                     <div>
-                <a href="CreateUser.aspx"> <button type="button" class="btn btn-dark btn-block" style="margin:5px">CREATE USER</button></a>
+                <a href="CreateUser.aspx"> <button type="button" class="btn btn-dark btn-block" style="margin:5px">MANAGE USERS</button></a>
             </div>
              <div>
           <a href="ControlPanal.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">CONTROL PANEL</button></a>

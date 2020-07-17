@@ -22,14 +22,7 @@
                                     <h3>
                                         Welcome!
                                     </h3>
-                                    <p>i just change some code to see whether it gets committed.
-                                        Master pages allow you to create a consistent look and behavior for all the pages (or group of pages) in your web application.
-A master page provides a template for other pages, with shared layout and functionality. The master page defines placeholders for the content, which can be overridden by content pages.
-The output result is a combination of the master page and the content page.
-The content pages contain the content you want to display.
-When users request the content page, ASP.NET merges the pages to produce output that combines the layout of the master page with the content of the content page.
-More Info on Master Page – https://docs.microsoft.com/en-us/previous-versions/dct97kc3(v=vs.140)?redirectedfrom=MSDN
-Watch the video tutorial at the end of this video to understand more about how to cre</p>
+                                    <p>Fast fashion brand which offers latest trends in women's fashion. Discover: dresses, tops, Skirts, Shorts, jeans, Trousers, Jumpsuits & Playsuits. Keep Employees Engaged & Empowered. Request a Live Report! Collaborate & Boost Engagement Through Social, Mobile & Work-Life Capabilities. Mobile-centric Experience. Mobile-responsive Design. </p>
                                 </center>
                             </div>
                         </div>

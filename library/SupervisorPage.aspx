@@ -16,10 +16,10 @@
             <div class="col-md-4 mx-auto"
      <CENTER>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">RATE EMPLOYEES</button>
+             <a href="RateEmployees.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">RATE EMPLOYEES</button></a>
          </div>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">GENERATE REPORTS</button>
+             <button type="button" class="btn btn-dark btn-block" style="margin:5px">PERFORMANCE REPORTS</button>
          </div>
          <br />
 
