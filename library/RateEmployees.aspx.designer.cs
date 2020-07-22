@@ -15,67 +15,85 @@ namespace library
     {
 
         /// <summary>
-        /// Label1 control.
+        /// cmbEmployee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect cmbEmployee;
 
         /// <summary>
-        /// Label2 control.
+        /// cmbMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect cmbMonth;
 
         /// <summary>
-        /// Label3 control.
+        /// labelone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.HiddenField labelone;
 
         /// <summary>
-        /// Label4 control.
+        /// labeltwo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.HiddenField labeltwo;
 
         /// <summary>
-        /// Label5 control.
+        /// labelthree control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.HiddenField labelthree;
 
         /// <summary>
-        /// Label6 control.
+        /// labelfour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.HiddenField labelfour;
 
         /// <summary>
-        /// Label7 control.
+        /// labelfive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
+        protected global::System.Web.UI.WebControls.HiddenField labelfive;
+
+        /// <summary>
+        /// labelsix control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelsix;
+
+        /// <summary>
+        /// labelseven control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField labelseven;
 
         /// <summary>
         /// Button2 control.

@@ -37,6 +37,7 @@ namespace library
                     {
                         Response.Write("<script> alert('Login Successful');</script>");
                         Session["name"] = dr.GetValue(0).ToString();
+                        Session["empID"] = dr.GetValue(2).ToString();
                         Session["hello"] = "user";
                         string role = dr.GetValue(3).ToString();
 
@@ -58,6 +59,7 @@ namespace library
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine(" =============== " + ex.Message);
                 Response.Write("<script> alert('" + ex.Message + "');</script>");
             }
         }
