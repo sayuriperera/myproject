@@ -19,7 +19,7 @@
              <a href="RateEmployees.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">RATE EMPLOYEES</button></a>
          </div>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">PERFORMANCE REPORTS</button>
+             <a href="EmployeePerformanceAnalysis.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">PERFORMANCE REPORTS</button></a>
          </div>
          <br />
 
