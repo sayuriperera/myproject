@@ -220,7 +220,7 @@
             </div>
          <div class="row">
                             <div class="col-6">
-                                 <asp:Button ID="Button2" class="btn btn-primary btn-block" runat="server" Text="Cancel" />
+                                 <asp:Button ID="Button2" class="btn btn-primary btn-block" runat="server" Text="Back" OnClick="Button2_Click" />
                             </div>
                             <div class="col-6">
                                  <asp:Button ID="Button1" OnClick="Button1_Click" class="btn btn-success btn-block" runat="server" Text="Submit Rating" />

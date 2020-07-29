@@ -27,7 +27,8 @@ namespace library
 
         protected void Page_Load(object sender, EventArgs e)
         {
-			dataPoints1 = new List<DataPoint>();
+            System.Diagnostics.Debug.WriteLine(" ==============================");
+            dataPoints1 = new List<DataPoint>();
 		    dataPoints2 = new List<DataPoint>();
 			dataPoints3 = new List<DataPoint>();
 			dataPoints4 = new List<DataPoint>();
@@ -230,10 +231,10 @@ namespace library
             ClientScript.RegisterArrayDeclaration("array1", JsonConvert.SerializeObject(dataPoints1));
 			ClientScript.RegisterArrayDeclaration("array2", JsonConvert.SerializeObject(dataPoints2));
 			ClientScript.RegisterArrayDeclaration("array3", JsonConvert.SerializeObject(dataPoints3));
-			ClientScript.RegisterArrayDeclaration("array4", JsonConvert.SerializeObject(dataPoints1));
-			ClientScript.RegisterArrayDeclaration("array5", JsonConvert.SerializeObject(dataPoints2));
-			ClientScript.RegisterArrayDeclaration("array6", JsonConvert.SerializeObject(dataPoints3));
-			ClientScript.RegisterArrayDeclaration("array7", JsonConvert.SerializeObject(dataPoints3));
+			ClientScript.RegisterArrayDeclaration("array4", JsonConvert.SerializeObject(dataPoints4));
+			ClientScript.RegisterArrayDeclaration("array5", JsonConvert.SerializeObject(dataPoints5));
+			ClientScript.RegisterArrayDeclaration("array6", JsonConvert.SerializeObject(dataPoints6));
+			ClientScript.RegisterArrayDeclaration("array7", JsonConvert.SerializeObject(dataPoints7));
 
             Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "graph()", true);
         }
@@ -259,6 +260,11 @@ namespace library
             }
 
             return data;
+        }
+
+        protected void cmbEmployee_ServerChange(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(" ============================================ ");
         }
     }
 }

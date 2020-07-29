@@ -28,7 +28,7 @@ namespace library
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * from Login where UserName ='" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from Login where UserName ='" + TextBox1.Text.Trim() + "' AND Password = '" + TextBox2.Text.Trim() + "' AND Role = '" + "Admin" + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {

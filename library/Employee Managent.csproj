@@ -1753,6 +1753,7 @@
     <Content Include="images\social-media.png" />
     <Content Include="RateEmployees.aspx" />
     <Content Include="SupervisorPage.aspx" />
+    <Content Include="TestGraph.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="TestStar.aspx" />
     <Content Include="UserLogin.aspx" />
@@ -1822,6 +1823,13 @@
     </Compile>
     <Compile Include="SupervisorPage.aspx.designer.cs">
       <DependentUpon>SupervisorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestGraph.aspx.cs">
+      <DependentUpon>TestGraph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestGraph.aspx.designer.cs">
+      <DependentUpon>TestGraph.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.aspx.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>

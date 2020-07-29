@@ -6,6 +6,14 @@
     <script>
         function graph() {
 
+            console.log(array1[0]);
+            console.log(array2[0]);
+            console.log(array3[0]);
+            console.log(array4[0]);
+            console.log(array5[0]);
+            console.log(array6[0]);
+            console.log(array7[0]);
+
                     var chart = new CanvasJS.Chart("chartContainer", {
                         animationEnabled: true,
                         title: {
@@ -77,7 +85,7 @@
           <h3 style="text-align:center;">Employee Performance Analysis</h3>
       
        <label style="margin-left:10%;"> Select Employee  </label>
-         <select id="cmbEmployee" runat="server" OnSelectedIndexChanged="OnChangeEmployee()">
+         <select id="cmbEmployee" runat="server" OnServerChange="cmbEmployee_ServerChange">
                                    
          </select>
    </div>

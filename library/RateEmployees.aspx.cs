@@ -185,7 +185,7 @@ namespace library
 
 
 
-                cmd1 = new SqlCommand("SELECT * FROM Emp_Ratings WHERE Emp_ID =@empID AND Month=@month AND Year=@year AND Type=@type", connection);
+                cmd1 = new SqlCommand("SELECT * FROM Emp_Ratings WHERE Emp_ID=@empID AND Month=@month AND Year=@year AND Type=@type", connection);
                 cmd1.Parameters.AddWithValue("@empID", selectedEmployeeID);
                 cmd1.Parameters.AddWithValue("@month", selectedMonth);
                 cmd1.Parameters.AddWithValue("@year", year);
@@ -348,7 +348,7 @@ namespace library
                 if (dr.HasRows)
                 {
                     cmd = new SqlCommand("UPDATE Emp_Ratings SET Rating=@rating WHERE Emp_ID=@empID AND Year=@year AND Month=@month AND Type=@type", connection);
-                    cmd.Parameters.AddWithValue("rating", ap);
+                    cmd.Parameters.AddWithValue("rating", te);
                     cmd.Parameters.AddWithValue("@empID", selectedEmployeeID);
                     cmd.Parameters.AddWithValue("@month", selectedMonth);
                     cmd.Parameters.AddWithValue("@year", year);
@@ -377,6 +377,11 @@ namespace library
                 System.Diagnostics.Debug.WriteLine(" === " + ex.Message);
             }
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SupervisorPage.aspx");
         }
     }
 }
