@@ -16,29 +16,32 @@ namespace library
         private String empID;
         private String selectedEmployeeID;
         private String selectedMonth;
+
+
+        public RateEmployees()
+        {
+
+        }
   
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
             empID = (string)Session["empID"];
-        
-
-            try
+            if (!IsPostBack)
             {
-                SqlConnection connection = new SqlConnection(strcon);
-                if(connection.State == ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
                
+                try
+                {
+                    SqlConnection connection = new SqlConnection(strcon);
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
                     SqlCommand cmd = new SqlCommand("SELECT Emp_ID FROM Emp_Detail WHERE Post=@post AND Department=(SELECT Department FROM Emp_Detail WHERE Emp_ID=@empID)", connection);
-                    cmd.Parameters.AddWithValue("@post","Sales staff");
+                    cmd.Parameters.AddWithValue("@post", "Sales staff");
                     cmd.Parameters.AddWithValue("@empID", empID);
                     SqlDataReader dr = cmd.ExecuteReader();
-                cmbEmployee.Items.Clear();
+                    cmbEmployee.Items.Clear();
                     if (dr.HasRows)
                     {
                         while (dr.Read())
@@ -49,14 +52,13 @@ namespace library
                     }
 
                     connection.Close();
-                
-            }
-            catch (Exception ex) {
-                System.Diagnostics.Debug.WriteLine(" === " + ex.Message);
-            }
 
-
-            
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(" === " + ex.Message);
+                }
+            }
         }
 
         //rate button
@@ -80,6 +82,9 @@ namespace library
             String descipline = labelfive.Value.ToString();
             String appropriatedressing = labelsix.Value.ToString();
             String teamwork = labelseven.Value.ToString();
+
+            System.Diagnostics.Debug.WriteLine(selectedEmployeeID);
+            System.Diagnostics.Debug.WriteLine(selectedMonth);
 
             int a, t, c, o, d, ap, te;
 

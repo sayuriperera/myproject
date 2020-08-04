@@ -51,7 +51,9 @@
                             <div class="col-md-6">
                                <label>Employee ID</label>
                                  <div class="form-group">
+                                  <span class="textbox"> 
                                    <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Employee ID"></asp:TextBox>
+                                  </span>
                                      <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Employee ID Required." ControlToValidate="TextBox11" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
                                </div>    
                             </div>
