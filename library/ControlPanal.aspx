@@ -23,8 +23,8 @@
                             <div class="col">
                                 <label>Select the Position</label>
                                 <div class="form-group">
-                                <asp:DropDownList ID="DropDownList2" runat="server">
-                                    <asp:ListItem Text="Select" Value="Select" />
+                                <asp:DropDownList ID="DDL_Position" runat="server">
+                                    
                                 </asp:DropDownList>
 
                                     </div>
@@ -34,8 +34,8 @@
                             <div class="col">
                                 <label>Select the Leave type</label>
                                 <div class="form-group">
-                                <asp:DropDownList ID="DropDownList3" runat="server">
-                                    <asp:ListItem Text="Select" Value="Select" />
+                                <asp:DropDownList ID="DDL_LeaveType" runat="server">
+                                   
                                 </asp:DropDownList>
                                     </div>
                             </div>
@@ -44,19 +44,19 @@
                             <div class="col">
                                 <label>Select the Numebr of Leaves Permitted</label>
                                 <div class="form-group">
-                                <asp:TextBox ID="TextBox4" runat="server" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="TXT_NoOfPremitted" runat="server" TextMode="Number"></asp:TextBox>
                                     </div>
                             </div>
                         </div>
                          <div class="row">
                             <div class="col-md-6">
                                  <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block" ID="Button3" runat="server" Text="Back" OnClick="Button1_Click"/>
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button3" runat="server" Text="Back" />
                                 </div>
                             </div>
                              <div class="col-md-6">
                                  <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block" ID="Button4" runat="server" Text="Update" />
+                                    <asp:Button class="btn btn-success btn-block" ID="Button4" runat="server" AutoPostBack="false" Text="Update" OnClick="Button1_Click" />
                                 </div>
                             </div>
 
@@ -78,7 +78,7 @@
                             <div class="col">
                                 <label>Select the Position</label>
                                 <div class="form-group">
-                                <asp:DropDownList ID="DropDownList5" runat="server">
+                                <asp:DropDownList ID="DDL_Position_1" runat="server">
                                     <asp:ListItem Text="Select" Value="Select" />
                                 </asp:DropDownList>
                                     </div>
@@ -88,7 +88,7 @@
                             <div class="col">
                                 <label>Enter the Hourly Rate</label>
                                 <div class="form-group">
-                                <asp:TextBox ID="TextBox6" runat="server" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="TXT_HR" runat="server" TextMode="Number"></asp:TextBox>
                                     </div>
                             </div>
                         </div>
@@ -96,19 +96,19 @@
                             <div class="col">
                                 <label>Enter the Overtime Rate</label>
                                 <div class="form-group">
-                                <asp:TextBox ID="TextBox7" runat="server" TextMode="Number"></asp:TextBox>
+                                <asp:TextBox ID="TXT_OR" runat="server" TextMode="Number"></asp:TextBox>
                                     </div>
                             </div>
                         </div>
                          <div class="row">
                             <div class="col-md-6">
                                  <div class="form-group">
-                                    <asp:Button class="btn btn-primary btn-block" ID="Button5" runat="server" Text="Back" OnClick="Button1_Click"/>
+                                    <asp:Button class="btn btn-primary btn-block" ID="Button5" runat="server" Text="Back" OnClick="Button5_Click1"/>
                                 </div>
                             </div>
                              <div class="col-md-6">
                                  <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block" ID="Button6" runat="server" Text="Update" />
+                                    <asp:Button class="btn btn-success btn-block" ID="Button6" runat="server" AutoPostBack="false" OnClick="Button5_Click" Text="Update" />
                                 </div>
                             </div>
 

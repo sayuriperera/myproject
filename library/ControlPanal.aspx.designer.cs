@@ -15,31 +15,31 @@ namespace library
     {
 
         /// <summary>
-        /// DropDownList2 control.
+        /// DDL_Position control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_Position;
 
         /// <summary>
-        /// DropDownList3 control.
+        /// DDL_LeaveType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_LeaveType;
 
         /// <summary>
-        /// TextBox4 control.
+        /// TXT_NoOfPremitted control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox TXT_NoOfPremitted;
 
         /// <summary>
         /// Button3 control.
@@ -60,31 +60,31 @@ namespace library
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// DropDownList5 control.
+        /// DDL_Position_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList DDL_Position_1;
 
         /// <summary>
-        /// TextBox6 control.
+        /// TXT_HR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox TXT_HR;
 
         /// <summary>
-        /// TextBox7 control.
+        /// TXT_OR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox TXT_OR;
 
         /// <summary>
         /// Button5 control.
@@ -105,22 +105,22 @@ namespace library
         protected global::System.Web.UI.WebControls.Button Button6;
 
         /// <summary>
-        /// TextBox5 control.
+        /// ETF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox ETF;
 
         /// <summary>
-        /// TextBox3 control.
+        /// EPF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox EPF;
 
         /// <summary>
         /// Button1 control.
