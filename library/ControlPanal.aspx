@@ -130,7 +130,7 @@
                             <div class="col">
                                   <label>ETF Percentage</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="ETF Percentage"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="ETF" runat="server" placeholder="ETF Percentage"></asp:TextBox>
                                     
                                     </div>
                                </div> 
@@ -139,7 +139,7 @@
                         <div class="col">
                              <label>EPF Percentage</label>
                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="EPF Percentage"></asp:TextBox>
+                                   <asp:TextBox CssClass="form-control" ID="EPF" runat="server" placeholder="EPF Percentage"></asp:TextBox>
                                     
                                </div>
                                 </div>
@@ -152,7 +152,7 @@
                             </div>
                              <div class="col-md-6">
                                  <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block" ID="Button2" runat="server" Text="Set" />
+                                    <asp:Button class="btn btn-success btn-block" ID="Button2" runat="server" Text="Set" OnClick="Button2_Click"/>
                                 </div>
                             </div>
 

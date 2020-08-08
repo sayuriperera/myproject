@@ -4,8 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
+        <div>
+            <div>
+
                 <div class="card">
                     <div class="card-body">
 
@@ -58,9 +59,86 @@ ControlToValidate="ExcelFile">
                     </div>
                 </div>
         </div>
+
+
+            <br />
+             <br />
+ 
+         <label style="margin-left:2%;"> Select Employee  </label>
+         <asp:DropDownList  id="cmbEmployee" runat="server"></asp:DropDownList>
+         <label style="margin-left:2%;"> Enter Year </label>
+         <asp:TextBox  ID="txt_year" runat="server" placeholder="Year"></asp:TextBox> 
+         <label style="margin-left:2%;"> Select Month </label>
+         <select id="cmbMonth" runat="server">
+                                     <option value="1">January</option>
+                                     <option value="2">February</option>
+                                     <option value="3">March</option>
+                                     <option value="4">April</option>
+                                     <option value="5">May</option>
+                                     <option value="6">June</option>
+                                     <option value="7">July</option>
+                                     <option value="8">August</option>
+                                     <option value="9">September</option>
+                                     <option value="10">October</option>
+                                     <option value="11">November</option>
+                                     <option value="12">December</option>
+         </select>
+         <asp:Button style="margin-left:2%;" class="btn btn-success" ID="Button3" runat="server" Text="Calculate Salary" AutoPostback="false"  OnClick="Button3_Click" />
+    
+    <br />
+    <br />
         </div>
-    <br />
-    <br />
+          
+        <center>
+        <div id="SalaryReceiptDIV"  runat="server" style="width:80%;">
+             <hr style="background-color:red;" />
+            <center>
+                <h6 style="color:blueviolet;"><u>Salary Script</u></h6>
+            </center>
+             <hr style="background-color:red;" />
+            <div style="text-align:left;color:blue;">
+                <h6 id="EmplpoyeeID" runat="server"></h6>
+                <h6 id="EmployeeName" runat="server"></h6>
+                <h6 id="MonthYear" runat="server"></h6>
+            </div>
+            <hr style="background-color:red;" />
+            
+            <table border="1" style="width:80%;">
+                <tr>
+                    <td>Basic Salary</td>
+                    <td id="BasicSalary" runat="server"></td>
+                </tr>
+                 <tr>
+                    <td>Overtime Salary</td>
+                    <td id="OvertimeSalary" runat="server"></td>
+                </tr>
+                 <tr>
+                    <td>Total Basic Salary</td>
+                    <td id="TotalBasicSalary" runat="server"></td>
+                </tr>
+                 <tr>
+                    <td id="EPF_Name" runat="server"></td>
+                    <td id="EPF" runat="server"></td>
+                </tr>
+                <tr>
+                    <td>Net Salary</td>
+                    <td id="NetSalary" runat="server"></td>
+                </tr>
+                <tr>
+                    <td id="ETF_Name" runat="server"></td>
+                    <td id="ETF" runat="server"></td>
+                </tr>
+            </table>
+
+            <br />
+            <br />
+            <label>Add Allowances : </label>
+            <input type="number" ID="Allowances" runat="server"/>
+            <asp:Button style="margin-left:2%;" class="btn btn-success" ID="Button5" runat="server" Text="Approve" AutoPostback="false"  OnClick="Button5_Click" />
+        </div>
+            </center>
+       <br />
+        <br />
 
 
 </asp:Content>

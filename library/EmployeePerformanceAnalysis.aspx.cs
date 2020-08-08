@@ -34,7 +34,6 @@ namespace library
 		List<DataPoint> dataPoints6;
 		List<DataPoint> dataPoints7;
         static ArrayList employees;
-     
         static BestEmployeeHeader docHeader;
         private String empID;
         private static String[] MONTHS = { "January" , "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
@@ -60,7 +59,6 @@ namespace library
            
         }
 
-      
         private void LoadDataFromDB()
         {
 
@@ -262,11 +260,9 @@ namespace library
                     }
                 }
             }
-
             return data;
         }
 
-       
         protected void Button1_Click(object sender, EventArgs e)
         {
             
@@ -505,10 +501,5 @@ namespace library
                 } 
             }
         }
-
-
-       
     }
-
-   
 }

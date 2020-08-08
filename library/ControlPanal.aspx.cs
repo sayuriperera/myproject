@@ -24,7 +24,6 @@ namespace library
             }
         }
 
-
         private void LoadPositionComboBox() {
             try
             {
