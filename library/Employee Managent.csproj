@@ -154,6 +154,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminReportGeneration.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\css\bootstrap1.min.css" />
     <Content Include="bootstrap\css\bootstrap2.min.css" />
@@ -1823,6 +1824,13 @@
     <Content Include="HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminReportGeneration.aspx.cs">
+      <DependentUpon>AdminReportGeneration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminReportGeneration.aspx.designer.cs">
+      <DependentUpon>AdminReportGeneration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CalculateSalary.aspx.cs">
       <DependentUpon>CalculateSalary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

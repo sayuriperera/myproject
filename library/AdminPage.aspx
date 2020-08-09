@@ -41,7 +41,7 @@
            <a href="CalculateSalary.aspx"> <button type="button" class="btn btn-dark btn-block" style="margin:5px">CALCULATE SALARIES</button></a>
          </div>
          <div>
-             <button type="button" class="btn btn-dark btn-block" style="margin:5px">GENERATE REPORTS</button>
+           <a href="AdminReportGeneration.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">GENERATE REPORTS</button></a>
          </div>
                      
 

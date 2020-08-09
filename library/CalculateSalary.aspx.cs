@@ -33,6 +33,7 @@ namespace library
         private static float allowance;
         private static float finalFigure;
         private static Boolean flag = false;
+        private static int attendance;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -122,7 +123,6 @@ namespace library
             Response.Redirect("AdminPage.aspx");
         }
 
-
         // Salary Calculation 
 
         private void LoadEmployeeComboBoxData()
@@ -152,9 +152,6 @@ namespace library
                 System.Diagnostics.Debug.WriteLine(" === " + ex.Message);
             }
         }
-
-
-
 
         protected void Button3_Click(object sender, EventArgs e)
         {
@@ -207,6 +204,7 @@ namespace library
 
                     if (dr.HasRows)
                     {
+                        attendance = 0;
                         int noOfLeaves = 0;
                         float daytime = 0F;
                         float overtime = 0F;
@@ -223,6 +221,7 @@ namespace library
                             }
                             else
                             {
+                                attendance += 1;
                                 float t = (float)(checkOut - checkIn).TotalMinutes / 60f;
                                 if (t < 8)
                                 {
@@ -439,8 +438,16 @@ namespace library
                     cmd3.Parameters.AddWithValue("@etfContribution", etfContribution);
                     cmd3.Parameters.AddWithValue("@allowance", allowance);
                     cmd3.Parameters.AddWithValue("@finalFigure", finalFigure);
-
                     cmd3.ExecuteNonQuery();
+
+
+                    SqlCommand cmd4 = new SqlCommand("INSERT INTO AttendanceByMonth VALUES(@empID,@year,@month,@noOfDays)", connection);
+                    cmd4.Parameters.AddWithValue("@empID", empID);
+                    cmd4.Parameters.AddWithValue("@year", year);
+                    cmd4.Parameters.AddWithValue("@month", month);
+                    cmd4.Parameters.AddWithValue("@noOfDays", attendance);
+                    cmd4.ExecuteNonQuery();
+
                     SalaryReceiptDIV.Visible = false;
                     Response.Write("<script> alert('Salary Calculation saved successfully!')</script>");
 
