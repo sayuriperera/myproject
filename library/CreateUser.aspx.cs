@@ -149,6 +149,28 @@ namespace library
             DropDownList1.Text = "";
         }
 
-      
+        protected void RemoveUser_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(strcon);
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("SELECT * FROM Login WHERE Emp_ID=@empID", con);
+            cmd1.Parameters.AddWithValue("@empID", EmployeeID.Text.Trim());
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                SqlCommand cmd = new SqlCommand("DELETE FROM Login WHERE Emp_ID=@empID", con);
+                cmd.Parameters.AddWithValue("@empID", EmployeeID.Text.Trim());
+                cmd.ExecuteNonQuery();
+                Response.Write("<script> alert('User is removed from the system successfully');</script>");
+            } else
+            {
+                Response.Write("<script> alert('User does not exists');</script>");
+            }
+        }
     }
 }

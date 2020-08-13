@@ -21,7 +21,6 @@ namespace library
             }
         }
 
-
         private void LoadEmployeeTableData()
         {
             SqlConnection connection = new SqlConnection(strcon);

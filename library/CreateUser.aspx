@@ -89,6 +89,37 @@
                                 </div>
                             </div>
                         </div>
+
+                        </br>
+                         <div class="row">
+                            <div class="col">
+                                <center>
+                                    <h3>Remove User Account</h3>
+                                </center>
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-md-6">
+                                 <label>Employee ID</label>
+                                  <div class="form-group">
+                                   <asp:TextBox CssClass="form-control" ID="EmployeeID" runat="server" placeholder="Employee ID"></asp:TextBox>
+                                   <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Employee ID is required!" ControlToValidate="EmployeeID" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="ValGroupTwo"
+                                      ></asp:RequiredFieldValidator>
+                                </div>
+                                </div>
+                               
+                                </div>
+                          
+
+                         <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <asp:Button class="btn btn-block" BackColor="Red" ForeColor="White" ID="RemoveUser" runat="server" Text="Remove" OnClick="RemoveUser_Click" ValidationGroup="ValGroupTwo" />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
