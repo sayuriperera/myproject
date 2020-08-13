@@ -1822,6 +1822,7 @@
     <Content Include="AdminPage.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="ViewPastEmployees.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminReportGeneration.aspx.cs">
@@ -1960,6 +1961,13 @@
     </Compile>
     <Compile Include="ViewEmployee.aspx.designer.cs">
       <DependentUpon>ViewEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPastEmployees.aspx.cs">
+      <DependentUpon>ViewPastEmployees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewPastEmployees.aspx.designer.cs">
+      <DependentUpon>ViewPastEmployees.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

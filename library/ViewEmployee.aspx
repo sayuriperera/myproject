@@ -150,19 +150,37 @@
                         </div>
 
                             <div class="row">
-                            <div class="col-md-6">
-                               <label>Post</label>
-                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Post" ReadOnly="True"></asp:TextBox>
-                               </div>
-                            </div>
                                 <div class="col-md-6">
-                               <label>Department</label>
-                                 <div class="form-group">
-                                   <asp:TextBox CssClass="form-control" ID="TextBox15" runat="server"  placeholder="Department" ReadOnly="True"></asp:TextBox>                             
-                               </div>
-                            </div>
-</div>
+                                   <label>Post</label>
+                                     <div class="form-group">
+                                       <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Post" ReadOnly="True"></asp:TextBox>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label>Department</label>
+                                     <div class="form-group">
+                                       <asp:TextBox CssClass="form-control" ID="TextBox15" runat="server"  placeholder="Department" ReadOnly="True"></asp:TextBox>                             
+                                   </div>
+                                </div>
+                           </div>
+
+                         <!-- ETF and EPF -->
+                        <div class="row">
+                                <div class="col-md-6">
+                                   <label>Total EPF</label>
+                                     <div class="form-group">
+                                       <asp:TextBox CssClass="form-control" ID="Total_EPF" runat="server" placeholder="Total EPF" ReadOnly="True"></asp:TextBox>
+                                   </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label>Total ETF</label>
+                                     <div class="form-group">
+                                       <asp:TextBox CssClass="form-control" ID="Total_ETF" runat="server"  placeholder="Total ETF" ReadOnly="True"></asp:TextBox>                             
+                                   </div>
+                                </div>
+                        </div>
+
+
                       <%--buttons--%>
 
                         <div class="row">

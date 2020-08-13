@@ -63,15 +63,19 @@ namespace library
 
         void getEmployeeDetails()
         {
-            try
-            {
+            //try
+           // {
                 SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("SELECT * from Emp_Detail where Emp_ID='" + TextBox16.Text.Trim() + "' OR First_Name='" + TextBox16.Text.Trim() + "';", con);
+                string empID = TextBox16.Text.Trim();
+
+               
+                SqlCommand cmd = new SqlCommand("SELECT * from Emp_Detail where Emp_ID=@empID;", con);
+                cmd.Parameters.AddWithValue("empID", empID);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -94,6 +98,31 @@ namespace library
                         TextBox15.Text = dr.GetValue(14).ToString();
                         TextBox17.Text = dr.GetValue(15).ToString();
                         Image1.ImageUrl = dr.GetValue(16).ToString();
+
+                       
+                        SqlCommand cmd1 = new SqlCommand("SELECT SUM(EpfPart) FROM Salary WHERE EmpID=@empID;", con);
+                        cmd1.Parameters.AddWithValue("@empID", empID);
+                        SqlDataReader dr1 = cmd1.ExecuteReader();
+                        if(dr1.HasRows)
+                        {
+                           while(dr1.Read())
+                           {
+                            Total_EPF.Text = dr1.GetDouble(0).ToString("0.00");
+                             }
+                            
+                        }
+
+                        SqlCommand cmd2 = new SqlCommand("SELECT SUM(EtfContribution) FROM Salary WHERE EmpID=@empID;", con);
+                        cmd2.Parameters.AddWithValue("@empID", empID);
+                        SqlDataReader dr2 = cmd2.ExecuteReader();
+                        if (dr2.HasRows)
+                        {
+                            while(dr2.Read())
+                        {
+                            Total_ETF.Text = dr2.GetDouble(0).ToString("0.00");
+                        }
+                            
+                        }
                     }
 
                 }
@@ -102,11 +131,11 @@ namespace library
                     Response.Write("<script>alert('Invalid credentials');</script>");
                 }
 
-            }
-            catch (Exception ex)
+            //}
+           /* catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
-            }
+            } */
         }
         //back button
         protected void Button1_Click(object sender, EventArgs e)

@@ -28,7 +28,9 @@
          <div>
              <a href="ViewAll.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">VIEW ALL EMPLOYEE</button></a>
          </div>
-        
+         <div>
+             <a href="ViewPastEmployees.aspx"><button type="button" class="btn btn-dark btn-block" style="margin:5px">VIEW PAST EMPLOYEES</button></a>
+         </div>
          
        
 </div>
