@@ -60,6 +60,33 @@ namespace library
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
+        /// Txt_LeaveTypeID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Txt_LeaveTypeID;
+
+        /// <summary>
+        /// TXT_NewLeaveType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TXT_NewLeaveType;
+
+        /// <summary>
+        /// Btn_AddNewLeaveType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_AddNewLeaveType;
+
+        /// <summary>
         /// DDL_Position_1 control.
         /// </summary>
         /// <remarks>

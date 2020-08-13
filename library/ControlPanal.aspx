@@ -59,8 +59,41 @@
                                     <asp:Button class="btn btn-success btn-block" ID="Button4" runat="server" AutoPostBack="false" Text="Update" OnClick="Button1_Click" />
                                 </div>
                             </div>
-
                         </div>
+
+                        <br />
+                         <div class="row">
+                            <div class="col">                    
+                                  <center>
+                                      <h4>Add New Leave Type</h4>
+                                </center>
+                             </div>
+                          </div>
+
+                         <div class="row">
+                                <div class="col">
+                                    <label>Leave Type ID</label>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="Txt_LeaveTypeID" runat="server" ></asp:TextBox>
+                                    </div>
+                                </div>
+                        </div>
+
+                         <div class="row">
+                                <div class="col">
+                                    <label>Leave Type</label>
+                                    <div class="form-group">
+                                        <asp:TextBox ID="TXT_NewLeaveType" runat="server" ></asp:TextBox>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="col-md-6">
+                                 <div class="form-group">
+                                    <asp:Button class="btn btn-success btn-block" ID="Btn_AddNewLeaveType" runat="server" AutoPostBack="false" Text="Add" OnClick="Btn_AddNewLeaveType_Click" />
+                                </div>
+                        </div>
+
                       </div>
                        </div>
                    </div>

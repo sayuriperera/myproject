@@ -1,17 +1,51 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ViewAll.aspx.cs" Inherits="library.ViewAll" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        /*$(document).ready(function () {
             $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
-        })
+        })*/
 
-   </script>
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            });
+
+            // DataTable
+            var table = $('#example').DataTable({
+                initComplete: function () {
+                    // Apply the search
+                    this.api().columns().every(function () {
+                        var that = this;
+
+                        $('input', this.footer()).on('keyup change clear', function () {
+                            if (that.search() !== this.value) {
+                                that
+                                    .search(this.value)
+                                    .draw();
+                            }
+                        });
+                    });
+                }
+            });
+
+        });
+
+
+    </script>
     <style type="text/css">
         .auto-style1 {
             font-size: x-small;
         }
       
+        tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -29,66 +63,49 @@
                             </div>
                         </div>
                         <div class="row">
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:EmployeeMgtDBConnectionString %>" SelectCommand="SELECT * FROM [Emp_Detail]"></asp:SqlDataSource>
-
+                          
                             <div class="col">
-                                <asp:GridView ID="GridView1" class="table table-striped" runat="server" AutoGenerateColumns="False" DataKeyNames="Emp_ID" DataSourceID="SqlDataSource1">
-                                    <Columns>
-                                        <asp:BoundField DataField="Emp_ID" HeaderText="Employee ID" ReadOnly="True" SortExpression="Emp_ID" />
-                                        <asp:BoundField DataField="First_Name" HeaderText="First Name" SortExpression="First_Name" />
-                                        <asp:BoundField DataField="Last_Name" HeaderText="Last Name" SortExpression="Last_Name" />
-                                        <asp:BoundField DataField="Full_Name" HeaderText="Full Name" SortExpression="Full_Name" />
-                                        <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />
-                                        <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
-                                        <asp:BoundField DataField="District" HeaderText="District" SortExpression="District" />
-                                        <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                                        <asp:BoundField DataField="Post" HeaderText="Post" SortExpression="Post" />
-                                        <asp:BoundField DataField="Department" HeaderText="Department" SortExpression="Department" />
-                                        <asp:BoundField DataField="Qualifications" HeaderText="Qualifications" SortExpression="Qualifications" />
-                                        <asp:TemplateField HeaderText="Other Information">
-
-                                            <ItemTemplate>
-                                                <div class="container-fluid">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="row">
-                                                                <div class="auto-style1">
-
-                                                                   Contact Number
-                                                                    <asp:Label ID="Label1" runat="server" Font-Size="X-Small" Text='<%# Eval("Contact_No") %>' Font-Bold="True"></asp:Label>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="auto-style1">
-
-                                                                    NIC Number 
-                                                                    <asp:Label ID="Label2" runat="server" Font-Size="X-Small" Text='<%# Eval("NIC") %>' Font-Bold="True"></asp:Label>
-
-                                                                </div>
-                                                            </div>   
-                                                             <div class="row">
-                                                                <div class="auto-style1">
-
-                                                                   Joined Date
-                                                                    <asp:Label ID="Label3" runat="server" Font-Size="X-Small" Text='<%# Eval("Joined_Date") %>' Font-Bold="True"></asp:Label>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                       
-                                                  </div>
-                                                </div>
-                                            </ItemTemplate>
-
-                                        </asp:TemplateField>
-                                    </Columns>
-                                </asp:GridView>
+                                <table id="example"  class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>District</th>
+                <th>Status</th>
+                <th>Post</th>
+                <th>Department</th>
+                <th>Qualifications</th>
+                <th>Other Information</th>
+            </tr>
+        </thead>
+        <tbody id="TBL_Body" runat="server">
+           
+        </tbody>
+        <tfoot>
+            <tr>
+                <<th>Employee ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>District</th>
+                <th>Status</th>
+                <th>Post</th>
+                <th>Department</th>
+                <th>Qualifications</th>
+                <th>Other Information</th>
+            </tr>
+        </tfoot>
+    </table>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-
                                  <div class="form-group">
                                     <asp:Button class="btn btn-primary btn-block" ID="Button1" runat="server" Text="Back" OnClick="Button1_Click"/>
                                 </div>

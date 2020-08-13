@@ -248,5 +248,31 @@ namespace library
             }
             connection.Close();
         }
+
+        protected void Btn_AddNewLeaveType_Click(object sender, EventArgs e)
+        {
+            string leaveType = TXT_NewLeaveType.Text;
+            string leaveTypeID = Txt_LeaveTypeID.Text;
+
+            if(leaveType.IsEmpty() || leaveTypeID.IsEmpty())
+            {
+                Response.Write("<script> alert('Leave type and ID is required!');</script>");
+            } else
+            {
+                SqlConnection connection = new SqlConnection(strcon);
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                SqlCommand cmd = new SqlCommand("INSERT INTO Leave VALUES(@id,@type)", connection);
+                cmd.Parameters.AddWithValue("@id",leaveTypeID);
+                cmd.Parameters.AddWithValue("@type", leaveType);
+                cmd.ExecuteNonQuery();
+                LoadLeaveTypeComboBox();
+                TXT_NewLeaveType.Text = "";
+                Txt_LeaveTypeID.Text = "";
+                Response.Write("<script> alert('Successfully added new leave type!');</script>");
+            }
+        }
     }
 }
