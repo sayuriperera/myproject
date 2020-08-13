@@ -16,7 +16,7 @@ namespace library
     public partial class CalculateSalary : System.Web.UI.Page
     {
 
-        private static readonly string SavePath = "F:\\Project Sayuri\\";
+        private static readonly string SavePath = "E:\\AttendanceP\\";
         private readonly string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         private static float basicSalary = 0f;
         private static float overtimeSalary;

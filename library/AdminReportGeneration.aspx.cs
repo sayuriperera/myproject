@@ -82,7 +82,7 @@ namespace library
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "graph()", true);
                 } else
                 {
-                    Response.Write("<script> alert('There is no any record for selected employee!');</script>");
+                    Response.Write("<script> alert('There is no record for selected employee!');</script>");
                 }
             }
         }
