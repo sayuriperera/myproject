@@ -24,7 +24,8 @@
                                 <label>Select the Position</label>
                                 <div class="form-group">
                                 <asp:DropDownList ID="DDL_Position" runat="server">
-                                    
+                                    <asp:ListItem Value="1">Permanent</asp:ListItem>
+                                    <asp:ListItem Value="2">Temporary</asp:ListItem>
                                 </asp:DropDownList>
 
                                     </div>
@@ -70,20 +71,13 @@
                              </div>
                           </div>
 
-                         <div class="row">
-                                <div class="col">
-                                    <label>Leave Type ID</label>
-                                    <div class="form-group">
-                                        <asp:TextBox ID="Txt_LeaveTypeID" runat="server" ></asp:TextBox>
-                                    </div>
-                                </div>
-                        </div>
+                        
 
                          <div class="row">
                                 <div class="col">
-                                    <label>Leave Type</label>
+                                     <label>Leave Type</label>
                                     <div class="form-group">
-                                        <asp:TextBox ID="TXT_NewLeaveType" runat="server" ></asp:TextBox>
+                                    <asp:TextBox ID="TXT_NewLeaveType" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                         </div>
@@ -93,6 +87,45 @@
                                     <asp:Button class="btn btn-success btn-block" ID="Btn_AddNewLeaveType" runat="server" AutoPostBack="false" Text="Add" OnClick="Btn_AddNewLeaveType_Click" />
                                 </div>
                         </div>
+
+                        <!-- View Employees Taken Leaves and Remaining Leaves -->
+                         <br />
+                         <div class="row">
+                            <div class="col">                    
+                                  <center>
+                                      <h4>View Employee Taken and Remaining Leaves</h4>
+                                </center>
+                             </div>
+                          </div>
+
+                        
+
+                         <div class="row">
+                                <div class="col">
+                                    <label>Select an employee</label>
+                                <div class="form-group">
+                                <asp:DropDownList ID="EMP_ID" runat="server">
+                                   
+                                </asp:DropDownList>
+                                    </div>
+                                </div>
+                        </div>
+                        <br />
+                         <div class="row" id="LEAVES_DIV" runat="server">
+                                <div class="col">
+                                    <label id="Remaining" runat="server">Remaining Leaves</label> <br /><br />
+                                    <label id="Taken" runat="server">Taken Leaves</label>
+                                </div>
+                          </div>
+                        <br />
+                        <div class="col-md-6">
+                                 <div class="form-group">
+                                    <asp:Button class="btn btn-success btn-block" ID="View" runat="server" AutoPostBack="false" Text="View" OnClick="View_Click" />
+                                </div>
+                        </div>
+
+
+
 
                       </div>
                        </div>

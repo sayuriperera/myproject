@@ -237,12 +237,14 @@ namespace library
 
 
                         string post = "";
-                        SqlCommand cmd10 = new SqlCommand("SELECT Post FROM Emp_Detail WHERE Emp_ID=@empID;", connection);
+                        string status = "";
+                        SqlCommand cmd10 = new SqlCommand("SELECT Post,Status FROM Emp_Detail WHERE Emp_ID=@empID;", connection);
                         cmd10.Parameters.AddWithValue("@empID", empID);
                         SqlDataReader dr10 = cmd10.ExecuteReader();
                         if (dr10.Read())
                         {
                             post = dr10.GetString(0);
+                            status = dr10.GetString(1);
                         }
 
                         SqlCommand cmd2 = new SqlCommand("SELECT ID FROM Post WHERE Type=@post;", connection);
@@ -280,10 +282,19 @@ namespace library
                             totalNoOfLeavesGet = dr4.GetInt32(0);
                         }
 
+                        int s = -1;
+
+                        if(status.Equals("Permanent"))
+                        {
+                            s = 1;
+                        } else
+                        {
+                            s = 2;
+                        }
 
                         int totalNoOfLeaves = 0;
                         SqlCommand cmd5 = new SqlCommand("SELECT SUM(NoOfPremitted) FROM Post_Leave WHERE PostID=@postID;", connection);
-                        cmd5.Parameters.AddWithValue("@postID", postID);
+                        cmd5.Parameters.AddWithValue("@postID",s);
                         SqlDataReader dr5 = cmd5.ExecuteReader();
 
                         if (dr5.Read())

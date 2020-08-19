@@ -60,15 +60,6 @@ namespace library
         protected global::System.Web.UI.WebControls.Button Button4;
 
         /// <summary>
-        /// Txt_LeaveTypeID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Txt_LeaveTypeID;
-
-        /// <summary>
         /// TXT_NewLeaveType control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,51 @@ namespace library
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_AddNewLeaveType;
+
+        /// <summary>
+        /// EMP_ID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList EMP_ID;
+
+        /// <summary>
+        /// LEAVES_DIV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LEAVES_DIV;
+
+        /// <summary>
+        /// Remaining control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Remaining;
+
+        /// <summary>
+        /// Taken control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Taken;
+
+        /// <summary>
+        /// View control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button View;
 
         /// <summary>
         /// DDL_Position_1 control.

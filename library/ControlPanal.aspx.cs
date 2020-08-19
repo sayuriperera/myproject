@@ -19,8 +19,10 @@ namespace library
         {
             if(!IsPostBack)
             {
+                LEAVES_DIV.Visible = false;
                 LoadPositionComboBox();
                 LoadLeaveTypeComboBox();
+                LoadEmployees();
             }
         }
 
@@ -35,12 +37,10 @@ namespace library
 
                 SqlCommand cmd = new SqlCommand("SELECT * FROM Post", connection);
                 SqlDataReader dr = cmd.ExecuteReader();
-                DDL_Position.Items.Clear();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        DDL_Position.Items.Add(new ListItem(dr.GetValue(1).ToString(),dr.GetValue(0).ToString()));
                         DDL_Position_1.Items.Add(new ListItem(dr.GetValue(1).ToString(), dr.GetValue(0).ToString()));
                     }
 
@@ -252,11 +252,10 @@ namespace library
         protected void Btn_AddNewLeaveType_Click(object sender, EventArgs e)
         {
             string leaveType = TXT_NewLeaveType.Text;
-            string leaveTypeID = Txt_LeaveTypeID.Text;
 
-            if(leaveType.IsEmpty() || leaveTypeID.IsEmpty())
+            if(leaveType.IsEmpty())
             {
-                Response.Write("<script> alert('Leave type and ID is required!');</script>");
+                Response.Write("<script> alert('Leave type is required!');</script>");
             } else
             {
                 SqlConnection connection = new SqlConnection(strcon);
@@ -264,15 +263,136 @@ namespace library
                 {
                     connection.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Leave VALUES(@id,@type)", connection);
-                cmd.Parameters.AddWithValue("@id",leaveTypeID);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Leave(Leave_Type) VALUES(@type)", connection);
                 cmd.Parameters.AddWithValue("@type", leaveType);
                 cmd.ExecuteNonQuery();
                 LoadLeaveTypeComboBox();
                 TXT_NewLeaveType.Text = "";
-                Txt_LeaveTypeID.Text = "";
                 Response.Write("<script> alert('Successfully added new leave type!');</script>");
             }
+        }
+
+        private void LoadEmployees()
+        {
+            
+                  try
+            {
+                SqlConnection connection = new SqlConnection(strcon);
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT Emp_ID FROM Emp_Detail", connection);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        EMP_ID.Items.Add(dr.GetString(0));
+                    }
+
+                }
+
+                connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(" === " + ex.Message);
+            }
+        }
+
+        // View Employee taken leaves and remaining leaves
+        protected void View_Click(object sender, EventArgs e)
+        {
+            string empID = EMP_ID.SelectedValue;
+
+            try
+            {
+                SqlConnection connection = new SqlConnection(strcon);
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                SqlCommand cmd1 = new SqlCommand("SELECT Status FROM Emp_Detail WHERE Emp_ID=@empID", connection);
+                cmd1.Parameters.AddWithValue("@empID", empID);
+                SqlDataReader dr1 = cmd1.ExecuteReader();
+                if (dr1.HasRows)
+                {
+                    string status = "";
+                    if (dr1.Read())
+                    {
+                        status = dr1.GetString(0);
+                    }
+
+                    System.Diagnostics.Debug.WriteLine("Status == " + status);
+
+                    int statusID = -1;
+                    if (status.Equals("Permanent"))
+                    {
+                        statusID = 1;
+                    }
+                    else
+                    {
+                        statusID = 2;
+                    }
+
+                    int total = 0;
+                    SqlCommand cmd = new SqlCommand("SELECT SUM(NoOfPremitted) FROM Post_Leave WHERE PostID=@postID", connection);
+                    cmd.Parameters.AddWithValue("@postID", statusID);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+
+                        if (dr.Read())
+                        {
+                            total = dr.GetInt32(0);
+                        }
+                    }
+
+                    int taken = 0;
+
+                    SqlCommand cmd2 = new SqlCommand("SELECT SUM(NoOfLeaves) FROM Emp_Leave WHERE Emp_ID=@empID", connection);
+                    cmd2.Parameters.AddWithValue("@empID", empID);
+                    SqlDataReader dr2 = cmd2.ExecuteReader();
+
+
+                    try
+                    {
+                        if (dr2.HasRows)
+                        {
+                            if (dr2.Read())
+                            {
+                                taken = dr2.GetInt32(0);
+                            }
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        taken = 0;
+                    }
+
+
+                    Remaining.InnerText = "Number of Remaining Leaves : " + ((total - taken).ToString());
+                    Taken.InnerText = "Number of Taken Leaves : " + (taken.ToString());
+                    LEAVES_DIV.Visible = true;
+
+                }
+                else
+                {
+                    LEAVES_DIV.Visible = false;
+                    Response.Write("<script> alert('Employee doen't exists!');</script>");
+                }
+                connection.Close();
+            }catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+           
+            
+
         }
     }
 }
