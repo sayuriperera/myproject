@@ -44,7 +44,7 @@ namespace library
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) 
         {
            
             string strFileType = Path.GetExtension(ExcelFile.FileName).ToLower();
@@ -71,41 +71,45 @@ namespace library
                         }
                         Cell[] cells = row.Cells;
                         var date = cells[0].Value;
-                        
-                        DateTime dateTime = DateTime.FromOADate(double.Parse(date.ToString())).Date;
-                        string empID = cells[1].Text;
-
-                        string checkIn = DateTime.FromOADate(double.Parse(cells[2].Value)).ToString("HH:mm:ss");
-                        string checkOut = DateTime.FromOADate(double.Parse(cells[3].Value)).ToString("HH:mm:ss");
-                        
-                    
-                   
-                        SqlCommand cmd1 = new SqlCommand("SELECT * FROM Attendance WHERE EmpID=@empID AND Date=@date", connection);
-                        cmd1.Parameters.AddWithValue("@empID", empID);
-                        cmd1.Parameters.AddWithValue("@date", dateTime);
-
-                        SqlDataReader dr = cmd1.ExecuteReader();
-
-                        if (!dr.HasRows)
+                        DateTime dateTime;
+                        string empID = null;
+                        try
                         {
-                            SqlCommand cmd = new SqlCommand("INSERT INTO Attendance VALUES (@empID,@date,@checkIn,@checkOut)", connection);
-                            cmd.Parameters.AddWithValue("@empID", empID);
-                            cmd.Parameters.AddWithValue("@date", dateTime);
-                            cmd.Parameters.AddWithValue("@checkIn", checkIn);
-                            cmd.Parameters.AddWithValue("@checkOut", checkOut);
-                            cmd.ExecuteNonQuery();
-                        }
-                        else
+                            dateTime  = DateTime.FromOADate(double.Parse(date.ToString())).Date;
+                            empID  = cells[1].Text;
+                            string checkIn = DateTime.FromOADate(double.Parse(cells[2].Value)).ToString("HH:mm:ss");
+                            string checkOut = DateTime.FromOADate(double.Parse(cells[3].Value)).ToString("HH:mm:ss");
+
+
+
+                            SqlCommand cmd1 = new SqlCommand("SELECT * FROM Attendance WHERE EmpID=@empID AND Date=@date", connection);
+                            cmd1.Parameters.AddWithValue("@empID", empID);
+                            cmd1.Parameters.AddWithValue("@date", dateTime);
+
+                            SqlDataReader dr = cmd1.ExecuteReader();
+
+                            if (!dr.HasRows)
+                            {
+                                SqlCommand cmd = new SqlCommand("INSERT INTO Attendance VALUES (@empID,@date,@checkIn,@checkOut)", connection);
+                                cmd.Parameters.AddWithValue("@empID", empID);
+                                cmd.Parameters.AddWithValue("@date", dateTime);
+                                cmd.Parameters.AddWithValue("@checkIn", checkIn);
+                                cmd.Parameters.AddWithValue("@checkOut", checkOut);
+                                cmd.ExecuteNonQuery();
+                            }
+                            else
+                            {
+                                SqlCommand cmd = new SqlCommand("UPDATE Attendance SET CheckIn=@checkIn, CheckOut=@checkOut WHERE EmpID=@empID AND Date=@date", connection);
+                                cmd.Parameters.AddWithValue("@empID", empID);
+                                cmd.Parameters.AddWithValue("@date", dateTime);
+                                cmd.Parameters.AddWithValue("@checkIn", checkIn);
+                                cmd.Parameters.AddWithValue("@checkOut", checkOut);
+                                cmd.ExecuteNonQuery();
+                            }
+                        } catch (System.FormatException)
                         {
-                            SqlCommand cmd = new SqlCommand("UPDATE Attendance SET CheckIn=@checkIn, CheckOut=@checkOut WHERE EmpID=@empID AND Date=@date", connection);
-                            cmd.Parameters.AddWithValue("@empID", empID);
-                            cmd.Parameters.AddWithValue("@date", dateTime);
-                            cmd.Parameters.AddWithValue("@checkIn", checkIn);
-                            cmd.Parameters.AddWithValue("@checkOut", checkOut);
-                            cmd.ExecuteNonQuery();
+
                         }
-                       
-                        
 
                     }
                 }
