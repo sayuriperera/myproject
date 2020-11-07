@@ -15,8 +15,6 @@ namespace library
         private readonly string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CompareValidator1.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
-            CompareValidator2.ValueToCompare = DateTime.Now.ToString("MM/dd/yyyy");
         }
         protected void Button1_Click(object sender, EventArgs e)
         {

@@ -119,8 +119,7 @@
                                   <label>Date of Birth</label>
                                 <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Date of Birth Required" ControlToValidate="TextBox5" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:RequiredFieldValidator>
-                                    <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Cannot be a Future Date" ControlToValidate="TextBox5" Operator="LessThanEqual" Type="Date" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1"></asp:CompareValidator>
+
                                </div> 
                             </div>
                             <div class="col-md-6">
@@ -205,8 +204,7 @@
                                 <label>Joined Date</label>
                                  <div class="form-group">
                                    <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" TextMode="Date"></asp:TextBox>
-                                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Cannot be a future date" Operator="LessThanEqual" Type="Date"  ControlToValidate="TextBox9" Font-Bold="True" Font-Size="X-Small" ForeColor="Red" ValidationGroup="Val1" ></asp:CompareValidator>
-                                  
+             
                                </div>
                             </div>
                              <div class="col-md-6">
